@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="../css/debito.css">
+</head>
+<body>
+    <div class="pop-up" id="filtro">
+        <h1>Filtrar Movimentações</h1>
+        <form action="">
+            <label for="data_inicial">Data Inicial:</label>
+            <input type="date" name="data_inicial" id="data_inicial_filtro">
+            <label for="data_final">Data Final:</label>
+            <input type="date" name="data_final" id="data_final_filtro">
+            <label for="tipo_movimentacao">Tipo de Movimentação:</label>
+            <select name="tipo_movimentacao" id="tipo_movimentacao_filtro">
+                <option value="" selected disabled>Selecione um Tipo</option>
+                <option value="Entrada">Entrada</option>
+                <option value="Saida">Saída</option>
+            </select>
+            <label for="Categoria">Categoria:</label>
+            <select name="Categoria" id="categoria_filtro">
+                <option value="" selected disabled>Selecione uma Categoria</option>
+                <option value="Pessoal">Pessoal</option>
+                <option value="Clara">Clara</option>
+                <option value="SOS">SOS</option>
+                <option value="Assinatura">Assinatura</option>
+                <option value="Investimentos">Investimentos</option>
+            </select>
+            <div id="botoes">
+                <button type="button" id="cancelar_filtro"class="filtro">Cancelar</button>
+                <button type="submit" id="aplicar_filtro" class="filtro">Aplicar Filtro</button>
+            </div>
+        </form>
+    </div>
+    <div class="pop-up" id="formulario">
+        <h1>Adicionar Movimentação de Débito</h1>
+        <form action="">
+            <label for="data">Data:</label>
+            <input type="date" name="data" id="data">
+            <label for="tipo_movimentacao">Tipo de Movimentação:</label>
+            <select name="tipo_movimentacao" id="tipo_movimentacao">
+                <option value="" selected disabled>Selecione um Tipo</option>
+                <option value="Entrada">Entrada</option>
+                <option value="Saida">Saída</option>
+            </select>
+            <label for="valor">Valor:</label>
+            <input type="number" name="valor" id="valor" placeholder="Valor">
+            <label for="Categoria">Categoria:</label>
+            <select name="Categoria" id="categoria">
+                <option value="" selected disabled>Selecione uma Categoria</option>
+                <option value="Pessoal">Pessoal</option>
+                <option value="Clara">Clara</option>
+                <option value="SOS">SOS</option>
+                <option value="Assinatura">Assinatura</option>
+                <option value="Investimentos">Investimentos</option>
+            </select>
+            <label for="descricao">Descrição:</label>
+            <textarea name="descricao" id="descricao" cols="30" rows="5" placeholder="Descrição"></textarea>
+            <div id="botoes">
+                <button type="button" id="cancelar" class="formulario"><p>Cancelar</p></button>
+                <button type="submit" id="salvar" class="formulario"><p>Salvar</p></button>
+            </div>
+    </div>
+    <div id="barra_superior">
+        <div id="titulo">
+            <img src="../images/icon-controle-financeiro.png" width="50px" height="50px">
+            <h1 id="titulo_barra_superior">Controle Financeiro</h1>
+        </div>
+        <button id="add" type="button">
+            <img src="../images/icon-add.png" width="25px" height="25px">
+            <p>ADD</p>
+        </button>
+    </div>
+    <div id="content">
+        <button id="filter">
+            <img src="../images/icon-filter.png" width="25px" height="25px">
+            <p>Filter</p>
+        </button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Movimentação</th>
+                    <th>Valor</th>
+                    <th>Categoria</th>
+                    <th id="obs">Observações</th>
+                </tr>
+            </thead>
+            <tbody id="corpo_tabela">
+            </tbody>
+        </table>
+    </div>
+    <div id="divider"></div>
+    <div id="graphics">
+        <h1>Gráficos</h1>
+    </div>
+</body>
+<script  type="module" src="../js/debito.js"></script>
+</html>
